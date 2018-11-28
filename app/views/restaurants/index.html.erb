@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Restaurants</h1>
+
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-danger"><%= link_to 'Add a new restaurant', new_restaurant_path %></button>
+  </div>
+
+  <% @restaurants.each do |restaurant| %>
+   <h4><%= restaurant.name%></h4>
+   <p><%= restaurant.category %></p>
+   <p><%= restaurant.address %></p>
+   <%= link_to "See details", restaurant_path(restaurant), class: "btn btn-info"%>
+  <% end %>
+</div>
+
